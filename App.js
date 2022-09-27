@@ -1,20 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useCallback, useEffect, useState } from 'react'
+import { ThemeProvider } from 'styled-components'
+import {
+  useFonts,
+  SourceSansPro_400Regular,
+  SourceSansPro_700Bold,
+  SourceSansPro_600SemiBold,
+  SourceSansPro_900Black,
+} from '@expo-google-fonts/source-sans-pro'
+import { theme } from './src/styles'
+import { Routes } from './src/routes'
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  //const [appIsReady, setAppIsReady] = useState(false)
+  /*useEffect(() => {
+    async function prepare() {
+      let [fontsLoaded] = useFonts({
+        SourceSansPro_400Regular,
+        SourceSansPro_700Bold,
+        SourceSansPro_600SemiBold,
+        SourceSansPro_900Black,
+      });
+      setAppIsReady(fontsLoaded);
+    }
+    prepare();
+  }, []);*/
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  let [fontsLoaded] = useFonts({
+    SourceSansPro_400Regular,
+    SourceSansPro_700Bold,
+    SourceSansPro_600SemiBold,
+    SourceSansPro_900Black,
+  });
+
+  /*const rootView = useCallback(async () => {
+    if (appIsReady) {
+      await SplashScreen.hideAsync();
+    }
+  }, [appIsReady]);*/
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Routes />
+    </ThemeProvider>
+  )
+}
