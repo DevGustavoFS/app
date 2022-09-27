@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "app",
-    "slug": "app",
+    "name": "app-gow",
+    "slug": "app-gow",
+    "owner": "devgustaf",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
