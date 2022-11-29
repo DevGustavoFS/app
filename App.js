@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import {
@@ -9,7 +10,8 @@ import {
 } from '@expo-google-fonts/source-sans-pro'
 import { theme } from './src/styles'
 import { Routes } from './src/routes'
-import AppLoading from 'expo-app-loading'
+
+// AsyncStorage.clear()
 
 export default function App() {
 

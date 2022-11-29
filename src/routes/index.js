@@ -1,5 +1,4 @@
 import React from 'react'
-import { Ionicons } from '@expo/vector-icons'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -9,6 +8,7 @@ import {
   Detail,
   SearchScreen,
   FavoritesScreen,
+  WatchScreen,
 } from '../screens'
 import { BottomBar } from '~/components'
 
@@ -41,6 +41,7 @@ export const Routes = () => {
         <Stack.Screen name="Splash" component={LogoScreen} />
         <Stack.Screen name="Home" component={BottomRoute} />
         <Stack.Screen name="Detail" component={Detail} />
+        <Stack.Screen name="Watch" component={WatchScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )

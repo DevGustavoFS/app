@@ -6,7 +6,7 @@ import { theme } from '~/styles/theme'
 
 export const IconButton = ({ iconName, label, onPress }) => {
   return (
-    <ButtonContainer>
+    <ButtonContainer onPress={onPress}>
       <Ionicons
         name={iconName}
         size={theme.metrics.px(24)}
